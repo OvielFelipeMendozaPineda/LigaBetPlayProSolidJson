@@ -1,0 +1,1 @@
+Logica de acceso a los datos. Puede ser un json o una base de datos.
