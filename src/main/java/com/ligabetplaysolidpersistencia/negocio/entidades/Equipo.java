@@ -1,6 +1,7 @@
 package com.ligabetplaysolidpersistencia.negocio.entidades;
 
 public class Equipo {
+    private Long id;
     private String nombre;
     private int PJ;
     private int PG;
@@ -13,16 +14,19 @@ public class Equipo {
     public Equipo() {
         
     }
-    public Equipo(String nombre) {
+    
+    public Equipo(Long id, String nombre, int pJ, int pG, int pP, int pE, int gF, int gC, int tP) {
+        this.id = id;
         this.nombre = nombre;
-        this.PJ = 0;
-        this.PG = 0;
-        this.PP = 0;
-        this.PE = 0;
-        this.GF = 0;
-        this.GC = 0;
-        this.TP = 0;
+        PJ = pJ;
+        PG = pG;
+        PP = pP;
+        PE = pE;
+        GF = gF;
+        GC = gC;
+        TP = tP;
     }
+
     public String getNombre() {
         return nombre;
     }
@@ -70,6 +74,14 @@ public class Equipo {
     }
     public void setTP(int tP) {
         TP = tP;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
     
 }

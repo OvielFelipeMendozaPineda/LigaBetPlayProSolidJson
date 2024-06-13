@@ -2,9 +2,9 @@ package com.ligabetplaysolidpersistencia.negocio.entidades;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Partido {
+    private Long id;
     private LocalDate fecha;
     private Equipo equipoLocal;
     private Equipo equipoVisitante;
@@ -19,9 +19,10 @@ public class Partido {
     public Partido() {
     }
 
-    public Partido(LocalDate fecha, Equipo equipoLocal, Equipo equipoVisitante, int golesLocal, int golesVisitante,
-            Equipo equipoGanador, Equipo equipoPerdedor, ArrayList<Jugador> goleadores,
+    public Partido(Long id, LocalDate fecha, Equipo equipoLocal, Equipo equipoVisitante, int golesLocal,
+            int golesVisitante, Equipo equipoGanador, Equipo equipoPerdedor, ArrayList<Jugador> goleadores,
             ArrayList<Jugador> tarjetasAmarillas, ArrayList<Jugador> tarjetasRojas) {
+        this.id = id;
         this.fecha = fecha;
         this.equipoLocal = equipoLocal;
         this.equipoVisitante = equipoVisitante;
@@ -29,9 +30,9 @@ public class Partido {
         GolesVisitante = golesVisitante;
         this.equipoGanador = equipoGanador;
         this.equipoPerdedor = equipoPerdedor;
-        this.goleadores = new ArrayList<Jugador>();;
-        this.tarjetasAmarillas = new ArrayList<Jugador>();;
-        this.tarjetasRojas = new ArrayList<Jugador>();;
+        this.goleadores = goleadores;
+        this.tarjetasAmarillas = tarjetasAmarillas;
+        this.tarjetasRojas = tarjetasRojas;
     }
 
     public LocalDate getFecha() {
@@ -112,6 +113,14 @@ public class Partido {
 
     public void setTarjetasRojas(ArrayList<Jugador> tarjetasRojas) {
         this.tarjetasRojas = tarjetasRojas;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
     
 }
